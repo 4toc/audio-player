@@ -6,6 +6,10 @@ import {useStore} from "vuex";
 
 import {convertMsToMinutesSeconds} from "@/utils/readableTime";
 
+import audio1 from '@/assets/track1.mp3'
+import audio2 from '@/assets/track2.mp3'
+import audio3 from '@/assets/track3.mp3'
+
 const store = useStore()
 
 const currentTrack = computed(() => store.getters.getCurrentTrack)
@@ -15,6 +19,12 @@ let isPlayed : Ref<boolean | undefined> = ref(false)
 let seekValue = ref(0)
 
 const volume = ref(50)
+
+const audioHash: {[index: number]:string} = {
+  0: audio1,
+  1: audio2,
+  2: audio3,
+}
 
 const readableCurrentTime = computed(() => {
   if (currentTime.value) {
@@ -114,7 +124,7 @@ const handleSeekValue = (e: Event) => {
       </div>
       <audio
           ref="player"
-          :src="currentTrack.src"
+          :src="audioHash[currentTrack.id]"
           preload="metadata"
           @timeupdate="onPlaying"
       >
