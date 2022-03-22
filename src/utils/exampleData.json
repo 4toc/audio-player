@@ -1,0 +1,23 @@
+[
+  {
+    "id": 0,
+    "src": "src/assets/audio/track1.mp3",
+    "title": "Slum Lord",
+    "author": "djshanty",
+    "duration": "2:11"
+  },
+  {
+    "id": 1,
+    "src": "src/assets/audio/track2.mp3",
+    "title": "new song",
+    "author": "mixwell",
+    "duration": "3:31"
+  },
+  {
+    "id": 2,
+    "src": "src/assets/audio/track3.mp3",
+    "title": "Electronic",
+    "author": "writer",
+    "duration": "1:26"
+  }
+]
