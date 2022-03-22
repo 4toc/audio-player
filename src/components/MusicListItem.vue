@@ -16,9 +16,6 @@ const clickSong = () => {
 
 <template>
   <div class="music-list-item" @click="clickSong">
-    <div class="music-list-item__icon">
-      <img src="@/assets/icons/play.svg" alt="">
-    </div>
     <div class="music-list-item__name">
       <span class="music-list-item__title">{{props.item.title}}</span>
       <span class="music-list-item__author"> - {{ props.item.author }}</span>

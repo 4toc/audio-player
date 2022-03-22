@@ -65,6 +65,16 @@ const setVolume = () => {
       player.value.volume = Number(volume.value) / 100
   }
 }
+
+const handleInputValue = (e: Event) => {
+  const target = (<HTMLInputElement>e.target)
+  volume.value = Number(target.value)
+}
+
+const handleSeekValue = (e: Event) => {
+  const target = (<HTMLInputElement>e.target)
+  seekValue.value = Number(target.value)
+}
 </script>
 
 <template>
@@ -82,7 +92,7 @@ const setVolume = () => {
             max="100"
             step="1"
             :value="seekValue"
-            @input="event => seekValue = event.target.value"
+            @input="handleSeekValue"
             @change="onSeek"
         />
       </div>
@@ -122,7 +132,7 @@ const setVolume = () => {
             max="100"
             step="1"
             :value="volume"
-            @input="event => volume = event.target.value"
+            @input="handleInputValue"
             @change="setVolume"
         />
       </div>
